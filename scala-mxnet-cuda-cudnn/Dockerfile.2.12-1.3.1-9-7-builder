@@ -1,0 +1,16 @@
+## Basic image
+FROM entony/scala-mxnet-cuda-cudnn:2.12-1.3.1-9-7-runtime
+
+ENV SCALA_VERSION 2.12.7
+ENV SBT_VERSION 1.2.6
+
+COPY ../install /install
+RUN chmod +x -R /install/*
+
+RUN apt-get update && \
+    cd /install && \
+    ./scala.sh ${SCALA_VERSION} && \
+    ./sbt.sh ${SBT_VERSION}
+
+# Removing trash
+RUN rm -rf /install
