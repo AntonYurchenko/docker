@@ -9,7 +9,7 @@ ENV OPEN_CV_INSTALL_PREFIX /usr/local
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/
 ENV TIME_ZONE Europe/Moscow
 
-COPY ../install /install
+COPY install /install
 RUN chmod +x -R /install/*
 
 RUN apt-get update
