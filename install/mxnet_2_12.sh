@@ -13,7 +13,6 @@ CUDA_STUBS_DIR=${3}
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_STUBS_DIR}"
 
 # Install dependencies
-#apt-get install -y git build-essential libopenblas-dev libopencv-dev maven cmake libatlas-base-dev && \
 apt-get install -y git build-essential libopenblas-dev libopencv-dev maven cmake && \
     git clone -b ${MXNET_VERSION} --recursive https://github.com/dmlc/mxnet /tmp/mxnet && \
     cd /tmp/mxnet && \
@@ -26,4 +25,3 @@ apt-get install -y git build-essential libopenblas-dev libopencv-dev maven cmake
     mkdir -p /usr/local/share/mxnet/scala/linux-x86_64-gpu && \
     mv /tmp/mxnet/scala-package/assembly/linux-x86_64-gpu/target/mxnet-full_2.12-linux-x86_64-gpu-${MXNET_VERSION}-SNAPSHOT.jar /usr/local/share/mxnet/scala/linux-x86_64-gpu/mxnet-full_2.12-linux-x86_64-gpu-${MXNET_VERSION}-SNAPSHOT.jar && \
     rm -rf /tmp/mxnet && rm -rf /root/.m2
-
