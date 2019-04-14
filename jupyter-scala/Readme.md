@@ -1,5 +1,5 @@
 ## About
-???
+The docker image contains Jupyter Notebook with support Scala programming language (on based BeakerX).
 
 ## Running
 For running container on base the image you need to perform next script.
@@ -12,7 +12,7 @@ docker run -it \
 
 ## Versions description
 ### 1.4.1
-The version contains
+The version contains:
 * Java 8
 * Python 3.7
 * Notebook server 5.7.8
