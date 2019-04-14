@@ -6,7 +6,7 @@ For running container on base the image you need to perform next script.
 ```bash
 docker run -it \
     -p 8888:8888 \
-    -v /home/your_user/scala_norebook.ipynb:/workspace/scala_norebook.ipynb \
+    -v /home/your_user/my_scala_notebooks:/workspace/my_scala_notebooks \
     entony/jupyter-scala
 ```
 
