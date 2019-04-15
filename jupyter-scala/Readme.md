@@ -7,7 +7,7 @@ For running container on base the image you need to perform next script.
 docker run -it \
     -p 8888:8888 \
     -v /home/your_user/my_scala_notebooks:/workspace/my_scala_notebooks \
-    entony/jupyter-scala
+    entony/jupyter-scala:1.4.1
 ```
 
 ## Versions description
