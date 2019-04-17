@@ -11,7 +11,7 @@ ARG PANDAS_VERSION='0.24.2'
 ARG BEAKERX_VERSION='1.4.1'
 
 # Environment
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 ENV PATH $PATH:$JAVA_HOME/bin
 ENV M2_HOME /usr/share/maven
 
