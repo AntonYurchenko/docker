@@ -16,6 +16,12 @@ docker run -d \
 ```
 
 ## Versions description
+### 2.12-1.4.0-10.1-7-runtime
+The version contains version of CUDA 10.1
+
+### 2.12-1.4.0-10.1-7-builder
+The version contains version of CUDA 10.1
+
 ### 2.12-1.3.1-9-7-runtime
 The version contains
 * CUDA 9
