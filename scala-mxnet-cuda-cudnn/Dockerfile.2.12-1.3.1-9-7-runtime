@@ -6,7 +6,7 @@ ENV MXNET_BUILD_OPT "USE_OPENCV=1 USE_BLAS=openblas USE_CUDA=1 USE_CUDA_PATH=/us
 ENV CUDA_STUBS_DIR "/usr/local/cuda-9.0/targets/x86_64-linux/lib/stubs"
 ENV OPEN_CV_VERSION 3.4.3
 ENV OPEN_CV_INSTALL_PREFIX /usr/local
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 ENV TIME_ZONE Europe/Moscow
 
 COPY install /install
