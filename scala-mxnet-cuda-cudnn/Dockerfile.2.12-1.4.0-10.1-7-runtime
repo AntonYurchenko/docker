@@ -1,5 +1,5 @@
 ## Image builder
-FROM nvidia/cuda:10.1-cudnn7-devel AS builder
+FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04 AS builder
 
 ENV MXNET_VERSION 1.4.0
 ENV MXNET_BUILD_OPT "USE_OPENCV=1 USE_BLAS=openblas USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1"
