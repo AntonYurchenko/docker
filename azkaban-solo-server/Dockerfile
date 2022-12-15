@@ -1,7 +1,7 @@
 # Builder Image
 FROM ubuntu:16.04 AS builder
 
-ENV AZKABAN_VERSION "3.30.1"
+ENV AZKABAN_VERSION "3.90.0"
 
 ## Installation necessary tools and building Azkaban Solo Server
 RUN \
@@ -12,7 +12,7 @@ RUN \
 
 
 ## Target image
-FROM alpine:3.10.2 AS runtime
+FROM alpine:3.16.3 AS runtime
 
 ## Time zone internal comtainer, by default Moscow (+03:00)
 ENV TIME_ZONE "Europe/Moscow"
