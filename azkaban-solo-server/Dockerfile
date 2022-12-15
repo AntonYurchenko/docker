@@ -16,7 +16,7 @@ FROM alpine:3.16.3 AS runtime
 
 ## Time zone internal comtainer, by default Moscow (+03:00)
 ENV TIME_ZONE "Europe/Moscow"
-ENV WORK_DIR "/opt/azkaban-solo-server-${AZKABAN_VERSION}"
+ENV WORK_DIR "/opt/azkaban-solo-server"
 ENV CONF_FILE "${WORK_DIR}/conf/azkaban.properties"
 
 ## Azkaban configuration
@@ -49,8 +49,6 @@ CMD \
     cp -r "${WORK_DIR}/plugins" /var/azkaban/plugins && \
     sed -ri "s:(user.manager.xml.file)=.+:\1=/var/azkaban/azkaban-users.xml:g" ${CONF_FILE} && \
     sed -ri "s:(azkaban.jobtype.plugin.dir)=.+:\1=/var/azkaban/plugins/jobtypes:g" ${CONF_FILE} && \
-    sed -ri "s:(azkaban.project.dir)=.+:\1=/var/azkaban/projects:g" ${CONF_FILE} && \
-    sed -ri "s:(h2.path)=.+:\1=/var/azkaban/h2:g" ${CONF_FILE} && \
     sed -ri "s:(default.timezone.id)=.+:\1=${DEFAULT_TIME_ZIME_ID}:g" ${CONF_FILE} && \
     sed -ri "s:(lockdown.create.projects)=.+:\1=${LOCKDOWN_CREATE_PROJECTS}:g" ${CONF_FILE} && \
     sed -ri "s:(azkaban.name)=.+:\1=${AZKABAN_NAME}:g" ${CONF_FILE} && \
@@ -61,6 +59,6 @@ CMD \
     sed -ri "s:(mail.host)=.+:\1=${AZKABAN_MAIL_HOST}:g" ${CONF_FILE} && \
     sed -ri "s:(job.failure.email)=.+:\1=${AZKABAN_JOB_FAILURE_EMAIL}:g" ${CONF_FILE} && \
     sed -ri "s:(job.success.email)=.+:\1=${AZKABAN_JOB_SUCCESS_EMAIL}:g" ${CONF_FILE} && \
-    bin/azkaban-solo-start.sh && \
-    trap "bin/azkaban-solo-shutdown.sh" SIGINT SIGTERM && \
-    PID=$(cat currentpid); while [ -e "/proc/${PID}" ]; do sleep .6; done
+    bin/start-solo.sh && \
+    while [ ! -f currentpid ]; do echo "Wait starting ..." && sleep .6; done && \
+    tail -f soloServerLog*.out
