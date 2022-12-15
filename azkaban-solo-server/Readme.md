@@ -29,10 +29,18 @@ docker run -d --name "azkaban_solo_server" \
     -e AZKABAN_LABEL="Project description" \
     -e AZKABAN_COLOR="#FF3601" \
     -e AZKABAN_PORT=8081 \
-    entony/azkaban-solo-server:3.30.1-alpine
+    entony/azkaban-solo-server:3.90.0-alpine
 ```
 
 ## Versions description
+### 3.90.0-alpine
+The version contains:
+* Alpine Linux 3.16.3
+* Azkaban Solo Server 3.90.0
+* Open JRE 8
+* Bash
+* tzdate
+
 ### 3.30.1-alpine
 The version contains:
 * Alpine Linux 3.10.2

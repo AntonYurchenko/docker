@@ -8,8 +8,8 @@ The docker image contains Azkaban Solo Server. Alpine Linux has been used as bas
 git clone git@github.com:AntonYurchenko/docker.git docker
 cd docker
 
-docker build --no-cache -f azkaban-solo-server/Dockerfile -t entony/azkaban-solo-server:3.30.1-alpine .
-docker push entony/azkaban-solo-server:3.30.1-alpine
+docker build --no-cache -f azkaban-solo-server/Dockerfile -t entony/azkaban-solo-server:3.90.0-alpine .
+docker push entony/azkaban-solo-server:3.90.0-alpine
 docker rmi $(docker images -q -f 'dangling=true')
 ```
 
